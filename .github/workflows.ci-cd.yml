@@ -42,11 +42,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+            
+            # Build et push Docker image
+            - name: 🐳 Build Docker image
+              run: docker build -t atanganaorlys/sa_api:latest .
 
-      - name: Build Docker image
-        run: docker build -t atanganaorlys/suivie_academique-sa_api_compose:latest .
-
-      - name: Push Docker image
-        run: docker push atanganaorlys/suivie_academique-sa_api_compose:latest
-
-
+            - name: 📤 Push Docker image
+              run: docker push atanganaorlys/sa_api:latest
