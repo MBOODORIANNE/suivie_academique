@@ -1,0 +1,28 @@
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - ========================================
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - CRÉATION D'UNE NOUVELLE SALLE
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - ========================================
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - 📍 Adresse IP: 127.0.0.1
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - 🌐 Navigateur: Postman Unknown
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - 💻 Système d'exploitation: Unknown OS
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - 📱 Type d'appareil: Desktop
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - 🔧 User-Agent: PostmanRuntime/7.51.0
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - 🕐 Date/Heure: 2025-12-17T05:52:53.455389700
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - 📦 Données salle: code=S001, desc=Test, contenance=50
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - ========================================
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.s.implementations.SalleService - Tentative de création d'une nouvelle salle
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.s.implementations.SalleService - ✓ Salle créée avec succès: code=S001, contenance=50, statut=LIBRE
+2025-12-17 05:52:53 [http-nio-8089-exec-1] INFO  c.s.controllers.SalleController - ✅ Salle créée avec succès: S001
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - ========================================
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - CRÉATION D'UNE NOUVELLE SALLE
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - ========================================
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - 📍 Adresse IP: 127.0.0.1
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - 🌐 Navigateur: Postman 7.51
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - 💻 Système d'exploitation: Windows (serveur)
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - 📱 Type d'appareil: API Client
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - 🔧 User-Agent: PostmanRuntime/7.51.0
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - 🕐 Date/Heure: 2025-12-17T06:02:02.273745700
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - 📦 Données salle: code=ce290, desc=maintenance, contenance=3
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - ========================================
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.s.implementations.SalleService - Tentative de création d'une nouvelle salle
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.s.implementations.SalleService - ✓ Salle créée avec succès: code=ce290, contenance=3, statut=LIBRE
+2025-12-17 06:02:02 [http-nio-8089-exec-3] INFO  c.s.controllers.SalleController - ✅ Salle créée avec succès: ce290

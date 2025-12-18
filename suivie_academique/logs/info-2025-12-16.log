@@ -1,0 +1,8 @@
+2025-12-16 16:39:47 [http-nio-8089-exec-1] INFO  c.s.s.implementations.SalleService - Tentative de suppression de la salle: bhf
+2025-12-16 16:40:27 [http-nio-8089-exec-1] INFO  c.s.s.implementations.SalleService - Tentative de suppression de la salle: bhf
+2025-12-16 16:42:26 [http-nio-8089-exec-3] INFO  c.s.s.implementations.SalleService - Tentative de création d'une nouvelle salle
+2025-12-16 16:42:26 [http-nio-8089-exec-3] INFO  c.s.s.implementations.SalleService - ✓ Salle créée avec succès: code=ERTYY, contenance=68, statut=OCCUPE
+2025-12-16 16:42:57 [http-nio-8089-exec-4] INFO  c.s.s.implementations.SalleService - Tentative de suppression de la salle: ERTYY
+2025-12-16 16:42:57 [http-nio-8089-exec-4] INFO  c.s.s.implementations.SalleService - ✓ Salle supprimée avec succès: ERTYY
+2025-12-16 16:42:59 [http-nio-8089-exec-2] INFO  c.s.s.implementations.SalleService - Tentative de suppression de la salle: ERTYY
+2025-12-16 16:43:03 [http-nio-8089-exec-7] INFO  c.s.s.implementations.SalleService - Tentative de suppression de la salle: ERTYY
