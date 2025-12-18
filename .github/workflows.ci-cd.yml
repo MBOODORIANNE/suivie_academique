@@ -44,8 +44,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t atanganaorlys/suivie_academique:latest .
+        run: docker build -t atanganaorlys/suivie_academique-sa_api_compose:latest .
 
       - name: Push Docker image
-        run: docker push atanganaorlys/suivie_academique:latest
+        run: docker push atanganaorlys/suivie_academique-sa_api_compose:latest
+
 
