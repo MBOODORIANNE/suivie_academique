@@ -120,7 +120,7 @@ public class SalleService implements SalleInterface {
     public SalleDTO getById(String codeSalle) {
         log.debug("Recherche de la salle avec code: {}", codeSalle);
 
-        // CORRECTION: Utilisation de orElseThrow au lieu de .get()
+
         Salle salle = salleRepository.findById(codeSalle)
                 .orElseThrow(() -> {
                     log.warn("⚠ Salle non trouvée avec le code: {}", codeSalle);

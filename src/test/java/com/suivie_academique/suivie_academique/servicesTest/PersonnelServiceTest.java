@@ -228,12 +228,13 @@ class PersonnelServiceTest {
     void save_ShouldHandleNullRole() {
         // Arrange
         personnelDTO.setRolePersonnel(null);
-        when(codeGenerator.generate(anyString())).thenReturn("P001");
-        when(passwordEncoder.encode(anyString())).thenReturn("hashedPassword");
 
         // Act & Assert
-        assertThrows(NullPointerException.class, () -> personnelService.save(personnelDTO));
+        assertThrows(NullPointerException.class, () ->
+                personnelService.save(personnelDTO)
+        );
     }
+
 
     // ========== Tests pour la méthode getAll() ==========
 

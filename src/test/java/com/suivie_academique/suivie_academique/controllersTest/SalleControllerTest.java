@@ -11,6 +11,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -26,9 +28,10 @@ import static org.mockito.Mockito.*;
 
 /**
  * Tests unitaires pour SalleController
- * Version corrigée avec mock de HttpServletRequest
+ * Version corrigée avec MockitoSettings LENIENT
  */
 @ExtendWith(MockitoExtension.class)
+@MockitoSettings(strictness = Strictness.LENIENT)  // ✅ Correction : Mode lenient
 class SalleControllerTest {
 
     @Mock
@@ -55,6 +58,7 @@ class SalleControllerTest {
         salleDTO.setStatutSalle(SalleStatus.LIBRE);
 
         // ✅ Configuration par défaut du mock HttpServletRequest
+        // Mode LENIENT : Mockito ne se plaint plus si certains ne sont pas utilisés
         when(requestInfoExtractor.getClientIpAddress(any(HttpServletRequest.class)))
                 .thenReturn("127.0.0.1");
         when(requestInfoExtractor.getBrowserName(any(HttpServletRequest.class)))

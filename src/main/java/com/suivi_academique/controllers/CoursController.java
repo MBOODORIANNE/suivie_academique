@@ -34,7 +34,7 @@ public class CoursController {
     @GetMapping()
     public ResponseEntity<List<CoursDTO>> getAll() {
         return new  ResponseEntity<>(coursService.getAll(), HttpStatus.OK);
-
+//VCBCNBCNBCNBCBCCNBC
     }
 
     @PutMapping("/{codeCours}")
