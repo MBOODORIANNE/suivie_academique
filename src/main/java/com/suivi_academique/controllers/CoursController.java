@@ -45,6 +45,7 @@ public class CoursController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
+//test
 
     @DeleteMapping("/{codeCours}")
     public ResponseEntity<?> delete(@PathVariable String codeCours) {

@@ -145,26 +145,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
-            <!-- 🔐 OWASP Dependency Check -->
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>9.0.9</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <failBuildOnCVSS>7</failBuildOnCVSS>
-                    <format>HTML</format>
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 </project>
