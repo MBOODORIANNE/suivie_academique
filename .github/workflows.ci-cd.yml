@@ -1,4 +1,4 @@
-name: CI/CD DevSecOps - Suivie Académique
+name: CI/CD DevSecOps - Suivi Académique (Spring Boot)
 
 on:
   push:
@@ -56,10 +56,10 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
           ./mvnw sonar:sonar \
-            -Dsonar.projectKey=suivie_academique \
-            -Dsonar.projectName="Suivie Academique Backend" \
-            -Dsonar.host.url=$SONAR_HOST_URL \
-            -Dsonar.login=$SONAR_TOKEN
+          -Dsonar.projectKey=suivi-academique \
+          -Dsonar.host.url=$SONAR_HOST_URL \
+          -Dsonar.login=$SONAR_TOKEN
+
   # =======================
   # 3️⃣ OWASP DEPENDENCY CHECK
   # =======================
@@ -73,7 +73,7 @@ jobs:
       - name: OWASP Dependency Check
         uses: dependency-check/Dependency-Check_Action@main
         with:
-          project: "Suivie Academique"
+          project: "Suivi Academique"
           path: "."
           format: "HTML"
           out: "dependency-check-report"
