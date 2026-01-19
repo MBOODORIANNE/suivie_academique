@@ -1,4 +1,4 @@
-name: CI/CD DevSecOps - Suivie Académique (Spring Boot)
+name: CI/CD DevSecOps - Suivie Académique
 
 on:
   push:
