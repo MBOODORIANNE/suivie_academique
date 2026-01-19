@@ -25,8 +25,6 @@ jobs:
 
   # 2️⃣ SONARQUBE
   # =======================
-  # 2️⃣ SONARQUBE
-  # =======================
   sonar:
     needs: build
     runs-on: ubuntu-latest
@@ -50,11 +48,11 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
-          ./mvnw sonar:sonar \
-            -Dsonar.projectKey=suivie_academique \
-            -Dsonar.host.url=$SONAR_HOST_URL \
-            -Dsonar.login=$SONAR_TOKEN
-
+          ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar \
+            -Dsonar.projectKey=Spring-Boot-Suivi-Acad-mique \
+            -Dsonar.projectName='suivie_academique' \
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
   # =======================
   # 3️⃣ SÉCURITÉ DES DÉPENDANCES
   # =======================
