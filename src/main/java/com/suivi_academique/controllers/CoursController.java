@@ -30,7 +30,7 @@ public class CoursController {
         }
     }
 
-
+    //bonjour
     @GetMapping()
     public ResponseEntity<List<CoursDTO>> getAll() {
         return new  ResponseEntity<>(coursService.getAll(), HttpStatus.OK);
