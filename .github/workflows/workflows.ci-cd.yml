@@ -7,6 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
+  # 1️⃣ BUILD
   build:
     runs-on: ubuntu-latest
     steps:
@@ -22,9 +23,7 @@ jobs:
       - name: Build Project (Skip Tests)
         run: chmod +x ./mvnw && ./mvnw clean verify -DskipTests
 
-  # =======================
-  # 2️⃣ SONARQUBE (Corrigé : needs build)
-  # =======================
+  # 2️⃣ SONARQUBE
   sonar:
     needs: build
     runs-on: ubuntu-latest
@@ -49,30 +48,25 @@ jobs:
             -Dsonar.host.url=$SONAR_HOST_URL \
             -Dsonar.login=$SONAR_TOKEN
 
-  # =======================
-  # 3️⃣ OWASP DEPENDENCY CHECK (Fixé avec API KEY)
-  # =======================
- # =======================
-  # 3️⃣ OWASP DEPENDENCY CHECK (Version Corrigée avec votre clé)
-  # =======================
- dependency-check:
+  # 3️⃣ SÉCURITÉ DES DÉPENDANCES (Alternative à OWASP)
+  dependency-scan:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run Trivy FS Scan (SCA)
+
+      - name: Trivy Dependency Scan (SCA)
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs' # Scan du système de fichiers (pom.xml)
           scan-ref: '.'
           format: 'table'
-          exit-code: '1'
+          exit-code: '1' # Fait échouer le build si failles critiques
           severity: 'CRITICAL,HIGH'
-  # =======================
-  # 4️⃣ DOCKER BUILD & PUSH
-  # =======================
+
+  # 4️⃣ DOCKER BUILD, SCAN & PUSH
   docker:
-    needs: [sonar, dependency-check]
+    needs: [sonar, dependency-scan]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -83,7 +77,18 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and Push Docker image
-        run: |
-          docker build -t atanganaorlys/sa_apis:latest .
-          docker push atanganaorlys/sa_apis:latest
+      - name: Build Docker image
+        run: docker build -t atanganaorlys/sa_apis:latest .
+
+      # Scan de l'image Docker finale pour une sécurité totale
+      - name: Trivy Container Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'atanganaorlys/sa_apis:latest'
+          format: 'table'
+          exit-code: '1'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Push Docker image
+        if: success()
+        run: docker push atanganaorlys/sa_apis:latest
